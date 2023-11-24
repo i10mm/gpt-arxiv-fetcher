@@ -1,31 +1,38 @@
-# weekly_arxiv
+# gpt-arxiv-fetcher
 
-- Main Export Link: https://export.arxiv.org/api/query?search_query=all:llms&sortBy=lastUpdatedDate&sortOrder=descending&max_results=200 
+# Overview
+This repository hosts the implementation of a GPT-based system designed to interact with the arXiv API to fetch the latest research papers. The project integrates an OpenAPI schema for seamless interaction with arXiv's services.
+
+## Features
+- **ArXiv API Integration**: Utilizes the OpenAPI 3.0.0 specification to interact with arXiv's API, enabling users to fetch the latest research papers based on specific search criteria.
+- **GPT-Powered Queries**: Custom GPT instructions are configured to trigger specific actions, enhancing user interaction with the system.
+
+## Schema Details
+The OpenAPI schema defines the structure for API requests and responses. Key components include:
+- `search_query`: User-defined search term.
+- `sortBy` and `sortOrder`: Parameters to sort the fetched results.
+- `max_results`: Limits the number of results returned.
+
+## Custom GPT Instructions and User Interaction
+- **Trigger Command**: Typing `Arxiv!` in the GPT interface initiates the action.
+- **User Prompt**: Upon receiving the `Arxiv!` command, the system will ask: 
+  - _"Would you like me to search ArXiv for any recent development on this topic? Please specify the topic or search query."_
+- **Command Execution**: Replace `<topic or search query here>` with the user's actual query and call the `export.arxiv.org` API using the `getArxivPapers` operation to fetch relevant papers.
 
 ## Usage
+1. Configure your GPT instance with the OpenAPI schema.
+2. Use the custom command `Arxiv!` followed by your search term.
+3. The system will process your request and fetch results from arXiv.
 
-- run `python download_latest.py`
-- it will update `output.md`
+## Prerequisites
+- GPT setup capable of integrating with OpenAPI.
+- Internet access for API calls.
 
-You can modify the link in the script to change the search term, sorting, and limits in the URL
+## Installation
+Provide instructions on how to set up and run your project.
 
+## Contributing
+Contributions to enhance or extend the project's capabilities are welcome. Please read `CONTRIBUTING.md` for details on our code of conduct and the process for submitting pull requests.
 
-## Claude Prompting
-
-Claude has 100k token window, which makes it useful for surveying the resulting documents
-
-### Identifying trends
-
-Copy and paste the Markdown into Claude and then use this to get a list of trends
-
-```text
-Can you please characterize the major trends in the latest LLM research. ONLY use the material I have given you here. The goal is to summarize the last week of LLM research.
-```
-
-### Listing out papers for specific trends
-
-Once you identify trends, you can use this example. In this case I was asking about benchmarks.
-
-```text
-Please write a summary of the benchmarking trends as elucidated by the text I gave you. The summary should be in the format of a complete paragraph followed by a list of key innovations. Each item in the list should include the paper link and paper title, along with a brief description of the innovation. Make sure you only pull from the information I gave you in this conversation.
-```
+## License
+This project is licensed under the [MIT License](LICENSE.md) - see the `LICENSE.md` file for details.
