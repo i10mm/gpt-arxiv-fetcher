@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+  title: arXiv API
+  version: 1.0.0
+servers:
+  - url: https://export.arxiv.org/api
+paths:
+  /query:
+    get:
+      operationId: getArxivPapers # Unique identifier for this operation
+      summary: Fetches the latest research papers from arXiv
+      description: Retrieve a list of the latest research papers based on a search term
+      parameters:
+        - in: query
+          name: search_query
+          schema:
+            type: string
+          required: true
+          description: The search term for the papers, combined with 'all:'
+        - in: query
+          name: sortBy
+          schema:
+            type: string
+            default: lastUpdatedDate
+          description: The parameter by which results are sorted
+        - in: query
+          name: sortOrder
+          schema:
+            type: string
+            default: descending
+          description: The order of the sorting (ascending or descending)
+        - in: query
+          name: max_results
+          schema:
+            type: integer
+            default: 200
+          description: Maximum number of results to retrieve
+      responses:
+        '200':
+          description: A list of research papers
+          content:
+            application/xml:
+              schema:
+                type: object
+                # Define the XML schema here based on the arXiv API's response format
+        '400':
+          description: Invalid request

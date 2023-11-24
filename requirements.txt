@@ -1,0 +1,14 @@
+openai
+flask # If your application is web-based
+requests # For making additional HTTP requests
+python-dotenv # To manage API keys and other environment variables
+
+
+Users have access to OpenAI's API (hence the openai package).
+You might be building a web-based interface (hence flask).
+General HTTP requests might be needed (hence requests).
+Environment variables (like API keys) are managed securely (hence python-dotenv).
+
+
+
+Users have access to OpenAI GPT-4 Plus with the ability to create new GPTs

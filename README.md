@@ -1,7 +1,7 @@
 # gpt-arxiv-fetcher
 
 # Overview
-This repository hosts the implementation of a GPT-based system designed to interact with the arXiv API to fetch the latest research papers. The project integrates an OpenAPI schema for seamless interaction with arXiv's services.
+This repository hosts the implementation of a GPT-based system designed to interact with the arXiv API to fetch the latest research papers. The project integrates an OpenAPI schema for seamless interaction with arXiv's services. This first project is inspired by https://github.com/daveshap weekly_arxiv.
 
 ## Features
 - **ArXiv API Integration**: Utilizes the OpenAPI 3.0.0 specification to interact with arXiv's API, enabling users to fetch the latest research papers based on specific search criteria.
@@ -36,3 +36,11 @@ Contributions to enhance or extend the project's capabilities are welcome. Pleas
 
 ## License
 This project is licensed under the [MIT License](LICENSE.md) - see the `LICENSE.md` file for details.
+
+## Repository Structure
+
+- `/docs`: Contains the documentation for custom GPT instructions (`CustomInstructions.md`) and the guide to create new actions (`ActionCreationGuide.md`).
+- `/schemas`: Holds the OpenAPI schema for the arXiv API (`arXivAPISchema.yml`).
+- `/src`: The source directory where the main application code (`main.py`) resides.
+- `/tests`: Includes test scripts (`test_main.py`) to validate the application's functionality.
+- `requirements.txt`: Lists all the dependencies required to run the project.
